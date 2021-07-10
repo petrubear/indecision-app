@@ -1,7 +1,8 @@
 /* eslint-disable no-undef */
 /* eslint-disable require-jsdoc */
-
 /* eslint-disable react/react-in-jsx-scope */
+
+/* eslint-disable react/prop-types */
 
 class IndecisionApp extends React.Component {
     render() {
