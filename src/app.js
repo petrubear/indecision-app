@@ -11,7 +11,7 @@ class IndecisionApp extends React.Component {
         this.handlePick = this.handlePick.bind(this);
         this.handleAddOption = this.handleAddOption.bind(this);
         this.state = {
-            options: [],
+            options: this.props.options,
         };
     }
 
@@ -44,12 +44,12 @@ class IndecisionApp extends React.Component {
     }
 
     render() {
-        const title = 'Indecision App';
+        // const title = 'Indecision App';
         const subtitle = 'Put your life in the hands of a computer.';
         return (
             <div>
                 <Header
-                    title={title}
+                    // title={title}
                     subtitle={subtitle}
                 />
                 <Action
@@ -68,26 +68,22 @@ class IndecisionApp extends React.Component {
     }
 }
 
+IndecisionApp.defaultProps = {
+    options: [],
+};
+
 const Header = (props) => {
     return (
         <div>
             <h1>{props.title}</h1>
-            <h2>{props.subtitle}</h2>
+            {props.subtitle && <h2>{props.subtitle}</h2>}
         </div>
     );
 };
-/*
-class Header extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>{this.props.title}</h1>
-                <h2>{this.props.subtitle}</h2>
-            </div>
-        );
-    }
-}
-*/
+
+Header.defaultProps = {
+    title: 'Indecision App',
+};
 
 const Action = (props) => {
     return (
@@ -101,22 +97,6 @@ const Action = (props) => {
     );
 };
 
-/*
-class Action extends React.Component {
-    render() {
-        return (
-            <div>
-                <button
-                    onClick={this.props.handlePick}
-                    disabled={!this.props.hasOptions}
-                >What Should I do?
-                </button>
-            </div>
-        );
-    }
-}
-*/
-
 const Option = (props) => {
     return (
         <div>
@@ -124,18 +104,6 @@ const Option = (props) => {
         </div>
     );
 };
-
-/*
-class Option extends React.Component {
-    render() {
-        return (
-            <div>
-                {this.props.optionText}
-            </div>
-        );
-    }
-}
-*/
 
 const Options = (props) => {
     return (
@@ -148,24 +116,6 @@ const Options = (props) => {
     );
 };
 
-/*
-class Options extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div>
-                <button onClick={this.props.handleDeleteOptions}>RemoveAll</button>
-                {this.props.options.map((option) => {
-                    return <Option key={option} optionText={option}/>;
-                })}
-            </div>
-        );
-    }
-}
-*/
 class AddOption extends React.Component {
     constructor(props) {
         super(props);
@@ -201,16 +151,6 @@ class AddOption extends React.Component {
     }
 }
 
-/*
-const User = (props) => {
-    return (
-        <div>
-            <p>Name: {props.name}</p>
-            <p>Age: {props.age}</p>
-        </div>
-    );
-};
-*/
 const appRoot = document.getElementById('app');
-// ReactDOM.render(<User name='Edison' age={39}/>, appRoot);
-ReactDOM.render(<IndecisionApp/>, appRoot);
+// ReactDOM.render(<IndecisionApp options={['Yes', 'No']}/>, appRoot);
+ReactDOM.render(<IndecisionApp options={[]}/>, appRoot);
