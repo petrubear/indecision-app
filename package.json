@@ -15,7 +15,7 @@
   },
   "scripts": {
     "babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
-    "babel-counter": "babel src/playground/counter-components.js --out-file=public/scripts/app.js --presets=env,react --watch",
+    "babel-playground": "babel src/playground/build-it-visible-components.js --out-file=public/scripts/app.js --presets=env,react --watch",
     "live-server": "live-server public"
   }
 }
