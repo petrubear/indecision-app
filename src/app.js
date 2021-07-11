@@ -68,6 +68,15 @@ class IndecisionApp extends React.Component {
     }
 }
 
+const Header = (props) => {
+    return (
+        <div>
+            <h1>{props.title}</h1>
+            <h2>{props.subtitle}</h2>
+        </div>
+    );
+};
+/*
 class Header extends React.Component {
     render() {
         return (
@@ -78,7 +87,21 @@ class Header extends React.Component {
         );
     }
 }
+*/
 
+const Action = (props) => {
+    return (
+        <div>
+            <button
+                onClick={props.handlePick}
+                disabled={!props.hasOptions}
+            >What Should I do?
+            </button>
+        </div>
+    );
+};
+
+/*
 class Action extends React.Component {
     render() {
         return (
@@ -92,7 +115,17 @@ class Action extends React.Component {
         );
     }
 }
+*/
 
+const Option = (props) => {
+    return (
+        <div>
+            {props.optionText}
+        </div>
+    );
+};
+
+/*
 class Option extends React.Component {
     render() {
         return (
@@ -102,7 +135,20 @@ class Option extends React.Component {
         );
     }
 }
+*/
 
+const Options = (props) => {
+    return (
+        <div>
+            <button onClick={props.handleDeleteOptions}>RemoveAll</button>
+            {props.options.map((option) => {
+                return <Option key={option} optionText={option}/>;
+            })}
+        </div>
+    );
+};
+
+/*
 class Options extends React.Component {
     constructor(props) {
         super(props);
@@ -119,7 +165,7 @@ class Options extends React.Component {
         );
     }
 }
-
+*/
 class AddOption extends React.Component {
     constructor(props) {
         super(props);
@@ -155,5 +201,16 @@ class AddOption extends React.Component {
     }
 }
 
+/*
+const User = (props) => {
+    return (
+        <div>
+            <p>Name: {props.name}</p>
+            <p>Age: {props.age}</p>
+        </div>
+    );
+};
+*/
 const appRoot = document.getElementById('app');
+// ReactDOM.render(<User name='Edison' age={39}/>, appRoot);
 ReactDOM.render(<IndecisionApp/>, appRoot);
