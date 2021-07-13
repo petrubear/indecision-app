@@ -3,6 +3,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 
 /* eslint-disable react/prop-types */
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 class IndecisionApp extends React.Component {
     constructor(props) {
