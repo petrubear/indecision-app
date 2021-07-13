@@ -14,15 +14,17 @@ module.exports = {
         'sourceType': 'module',
     },
     'ignorePatterns': [
+        'public/bundle.js',
         'public/scripts/*.js',
+        'src/playground/*.js',
     ],
-    'rules': {
-        'indent': ['error', 4],
-        'max-len': ['error', {'code': 120}],
-    },
     'settings': {
         'react': {
             'version': '16.0.0',
         },
+    },
+    'rules': {
+        'indent': ['error', 4],
+        'max-len': ['error', {'code': 120}],
     },
 };
