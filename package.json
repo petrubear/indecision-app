@@ -10,7 +10,8 @@
     "live-server": "live-server public",
     "build-watch": "webpack --watch",
     "build": "webpack",
-    "dev-server": "webpack serve"
+    "dev-server": "webpack serve",
+    "start": "webpack serve"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
