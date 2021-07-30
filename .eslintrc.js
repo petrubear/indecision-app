@@ -15,13 +15,13 @@ module.exports = {
         'sourceType': 'module',
     },
     'ignorePatterns': [
-        'public/bundle.js',
+        'public/dist/bundle.js',
         'public/scripts/*.js',
         'src/playground/*.js',
     ],
     'settings': {
         'react': {
-            'version': '16.0.0',
+            'version': '17.0.0',
         },
     },
     'rules': {
